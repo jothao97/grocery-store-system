@@ -1,0 +1,40 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #ADD8E6;
+    text-align: center;
+}
+
+header {
+    border-style: solid 3px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+label{
+    padding-bottom: 20px;
+}
+
+fieldset {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+button:hover {
+    background-color: blue ;
+}
+
+#inventory-list {
+    border-style: solid;
+}
+
+#add-new-inventory {
+    border-style: solid;
+}
+
+#low-stock-alert {
+    border-style: solid;
+}

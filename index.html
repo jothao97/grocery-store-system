@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store System</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Your Local Grocery Store System</h1>
+
+    </header>
+    <main>
+        <section id="inventory-list">
+            <h2>Inventory List</h2>
+            <div id="inventory-list-result"></div>
+        </section>
+        <section id="add-new-inventory">
+            <h2>Add New Inventory</h2>
+                <form action="">
+                    <div>
+                        <label for="item-name-input">Item Name:</label><br>
+                        <input type="text" id="item-name-input">
+                    </div>
+                    <div>
+                        <label for="quantity-input">Quantity:</label><br>
+                        <input type="number" id="quantity-input" >
+                    </div>
+                    <div>
+                        <label for="price-input">price:</label><br>
+                        <input type="number" id="price-input">
+                    </div>
+                    <div>
+                        <label for="category-select">Category:</label><br>
+                        <select name="" id="category-select">
+                            <option type="radio" value="fruit" name="category-input">Fruit</option>
+                            <option type="radio" value="veggie" name="category-input">Vegetable</option>
+                            <option type="radio" value="dairy" name="category-input">Dairy</option>
+                            <option type="radio" value="meat" name="category-input">Meat</option>
+                            <option type="radio" value="health" name="category-input">Health</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button id="add-new-inventory" type="submit">Add New Item</button>
+                    </div>
+                </form>
+        </section>
+            <section id="low-stock-alert">
+                <h2>Low Stock Alert</h2>
+                    <div id="low-stock-result"></div>
+            </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
