@@ -33,53 +33,59 @@ function displayInventoryList(inventoryArray){
 
 
 // declare an array that displays the low stocked items
-const lowStockList = [];
+ const lowStockList = [];
 
 // a function that displays items when there are less than 3 in stock
 function calculateLessThanThree(inventoryArray){
-    if (inventoryList(quanity < 3)){
+    let quantity = 3;
+    for (let i = 0; i < inventoryList.length; i++){
+    let item = inventoryList[i]
+    if (item.quantity < 3){
         lowStockList.push();
     }
+}
+    return lowStockList;
 }
 
 // function to displays the LOW inventory list
 function displayLowInventory(inventoryArray){
-    const lowInventoryElement = document.getElementsById('low-stock-result');
-    lowInventoryElement.innerHTML = '<h4> LowInventory List: </h4>';
+    const lowInventoryElement = document.getElementById('low-stock-result');
+    lowInventoryElement.innerHTML = '';
     const list = document.createElement('ul');
     inventoryArray.forEach(item => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${item.name}, Quantity: ${item.quanity}, Price: $${item.price}`;
+        listItem.textContent = `${item.name}, Quantity: ${item.quantity}, Price: $${item.price}`;
         list.appendChild(listItem);
     });
     lowInventoryElement.appendChild(list);
 }
 
 //creating event listener for DOM to laod
-document.addEventListener('DOMContentLoaded'), () => {
+document.addEventListener('DOMContentLoaded', () => {
     const displayArrayAsList = (array, elementId) => {
         const listElement = document.getElementById(elementId);
         listElement.innerHTML = '';
         array.forEach(item => {
-            const listItem = document.createElement('section');
-            listItem.textcontent = item.displayInfo ? item.displayInfo() : item;
+            const listItem = document.createElement('div');
+            listItem.textcontent = item.displayInfo ? item.displayInfo() : `${item.name}, Quantity: ${item.quantity}, Price: $${item.price}`;
             listElement.appendChild(listItem);
         })
 
     }
-}
-
-document.getElementById('low-stock-result').innerhtml = `<h4> Low Stock Alert: ${calculateLessThanThree(inventoryList)}</h4>`
-displayLowInventory(inventoryList);
-
-document.getElementById('add-new-inventory').onclick = () => {
-    const itemName = document.getElementById('item-name-input').value;
-    const quanity = parseFloat(document.getElementById('quantity-input')).value;
-    const price = parseFloat(document.getElementById('price-input')).value;
-    const inventory = new inventoryList(name, quanity, price);
-    inventoryList.push(inventory);
-
-    displayArrayAsList(inventoryList, 'inventory-list-result');
-}
+    
 
 
+    document.getElementById('low-stock-result').innerhtml = `<h4> Low Stock Alert: ${calculateLessThanThree(inventoryList)}</h4>`
+    displayLowInventory (calculateLessThanThree(inventoryList));
+
+    document.getElementById('add-new-inventory').onclick = () => {
+        const name = document.getElementById('item-name-input').value;
+        const quanity = parseFloat(document.getElementById('quantity-input')).value;
+        const price = parseFloat(document.getElementById('price-input')).value;
+        const inventory = new InventoryList(name, quanity, price);
+        inventoryList.push(inventory);
+
+        displayArrayAsList(inventoryList, 'inventory-list-result');
+    }
+
+})
